@@ -60,7 +60,7 @@ function setup() {
 function draw() {
   // x=x+changex;
   // y=y+changey;
-  background(220);
+  background(200);
 
   if(titlepage==true){
     image(titleimg, 0, 0);

@@ -36,11 +36,12 @@ let listpage = false;
 let selectedpage = false;
 let drivingpage = false;
 let arrivedpage = false;
-
+var siri;
 
 var counter = 10;
 function preload(){
   // img = loadImage('shrekophone.jpg');
+  siri = loadSound('siri.mp3');
   titleimg = loadImage('title.png');
   addressimg = loadImage('address.png');
   filledimg = loadImage('filled.png');
@@ -59,6 +60,7 @@ function preload(){
 
 function setup() {
   createCanvas(428,926);
+
   // createCanvas(600,600);
   frameRate(5);
 }
@@ -168,13 +170,16 @@ function mousePressed(){
   if (mouseY>680 && mouseY<730 && mouseX>255 && mouseX<395 && selectedpage==true){
     selectedpage = false;
     drivingpage = true;
+    siri.loop();
+
+
 
 
   }
   if (mouseY>0 && mouseY<300 && drivingpage==true){
     drivingpage = false;
     arrivedpage = true;
-
+    siri.pause();
 
   }
   if(listpage == true && mouseY>0 && mouseY<50 & mouseX>0 && mouseX<50){
